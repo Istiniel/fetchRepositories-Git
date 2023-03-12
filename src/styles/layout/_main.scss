@@ -1,0 +1,192 @@
+@use '../abstracts/' as *;
+
+.header {
+  background-color: $primary-black;
+}
+
+.fetch-repos {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @include maxQ(xSmall) {
+    flex-direction: column;
+  }
+}
+
+.fetch-repos__input {
+  position: relative;
+  padding: 0.5rem;
+  background-color: $primary-color-1;
+
+  flex: 0 1 30%;
+  height: 3rem;
+
+  &:focus {
+    outline: 2px solid $accent-color-1;
+    outline-offset: -2px;
+  }
+
+  font-family: $font-serif;
+  @include font(1.5rem, 1.5rem, 400);
+}
+
+.repo-name__label {
+  position: relative;
+
+  &:after {
+    z-index: 100;
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+
+    font-family: $font-serif;
+    @include font(1.5rem, 1.5rem, 400);
+    color: rgb(255, 80, 49);
+  }
+}
+
+.fetch-repos__button {
+  letter-spacing: 0.1rem;
+}
+
+// repos
+.git-repos {
+  background-color: $primary-white;
+}
+.git-repos__container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: $accent-color-3;
+  min-height: calc(100vh - 7rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.git-repos__results {
+  max-width: 70%;
+  border-collapse: collapse;
+}
+
+.git-repos__header {
+  font-family: $font-serif;
+  @include font(1.5rem, 3rem, 400);
+
+  td {
+    padding: 2rem 1.5rem;
+    padding-left: 1.5rem;
+    background-color: $accent-color-1;
+    border-bottom: 2px solid $primary-white;
+    border-left: 2px solid $primary-white;
+
+    color: $primary-white;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+  }
+}
+.git-repos__name {
+  text-align: center;
+
+  @include minQ(small) {
+    min-width: 10rem;
+  }
+
+  @include minQ(large) {
+    min-width: 20rem;
+  }
+}
+.git-repos__author {
+  text-align: center;
+
+  @include maxQ(small) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  @include minQ(small) {
+    min-width: 20rem;
+  }
+}
+.git-repos__description {
+  text-align: center;
+
+  min-width: calc(25vw - 3rem);
+
+  @include minQ(small) {
+    width: 20rem;
+  }
+
+  @include minQ(large) {
+    min-width: 45rem;
+  }
+}
+
+.git-repos__body {
+  font-family: $font-serif;
+  @include font(1.5rem, 2rem, 400);
+  text-transform: lowercase;
+
+  td {
+    padding: 3rem 1.5rem;
+    padding-left: 1.5rem;
+    background-color: $primary-red;
+    border-bottom: 2px solid $primary-white;
+    border-left: 2px solid $primary-white;
+
+    color: $primary-white;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+}
+
+.git-repo {
+  @include minQ(medium) {
+    td:last-child {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+.git-repo__name {
+  max-width: 20rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.git-repo__repolink {
+  @include onHover() {
+    color: $primary-black;
+    cursor: pointer;
+  }
+}
+.git-repo__author {
+  max-width: 20rem;
+  vertical-align: middle;
+
+  @include maxQ(small) {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+.git-repo__description {
+  max-width: 45rem;
+}
+
+//repos not found
+.repo__notfound {
+  text-align: center;
+  font-family: $font-serif;
+  color: $primary-black;
+  @include font(3rem, 3rem, 400);
+}
