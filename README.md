@@ -8,7 +8,7 @@
 :star: Возможность указать тему\
 :star: Как на компьютерах, так и на мобильных устройствах\
 
-![preview](src/images/preview.png)
+![preview](https://raw.githubusercontent.com/Istiniel/fetchRepositories-Git/gh-pages/images/preview.png)
 
 ### Пример используемого в данном приложении кода (JS native)
 
