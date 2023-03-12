@@ -1,6 +1,6 @@
 # Fetch Repositories by topic (Git)
 
-### [Deploy link](https://istiniel.github.io/comments-nativeJS)
+### [Deploy link](https://istiniel.github.io/fetchRepositories-Git/)
 
 ### Native JS + SCSS
 
